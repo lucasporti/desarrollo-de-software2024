@@ -1,0 +1,58 @@
+class Alumno {
+    nombre;
+    apellido;
+    legajo;
+    fechaDeNacimiento;
+
+    // Nomenclatura para escribir métodos en una clase
+    nombreCompleto(){
+        return this.nombre + " " + this.apellido;
+    }
+
+    saludar(){
+        console.log("Hola soy " + this.nombreCompleto());
+    }
+
+    saludarA(nombrePersona){
+        console.log("Hola " + nombrePersona + ", soy " + this.nombreCompleto());
+    }
+
+    saludarAlumno(alumno){
+        console.log("Hola " + alumno.nombreCompleto() + ", soy " + this.nombreCompleto());
+    }
+// terminar
+    dameTuEdad(fechaDeNacimiento){
+        const date = new Date();
+        const anioActual = date.getFullYear();
+        const anioDeNacimiento = date.getFullYear()
+        return anioActual - anioDeNacimiento;
+    }
+
+};
+
+const roberto = new Alumno();
+// para asignarle valores a los atributos utilizamos el dot notation
+roberto.nombre = "Roberto";
+roberto.apellido = "Perez";
+roberto.legajo = 20207;
+roberto.fechaDeNacimiento = "2003-07-19";
+roberto.saludar();
+// creación de otro objeto
+const nadia = new Alumno();
+nadia.nombre = "Nadia";
+nadia.apellido = "Rodriguez";
+nadia.legajo = 20208;
+nadia.fechaDeNacimiento = "2005-07-19";
+nadia.saludar();
+//  cuando creamos un objeto a partir de una clase, estamos creando una instancia
+nadia.saludarAlumno(roberto);
+
+// de cada alumno, su fecha de nacimiento, poder preguntar cuantos años tiene. sin atributo edad
+console.log(nadia.dameTuEdad())
+
+// a la creación de clases y atributos se lo llama modelado
+
+// cuando algo me está llevando mucho tiempo, le pongo un return hardcodeado, y le escribo un comment //TODO
+
+const maria = new Alumno();
+maria.saludar();
