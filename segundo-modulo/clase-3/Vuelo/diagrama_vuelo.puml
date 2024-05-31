@@ -1,0 +1,67 @@
+@startuml
+class Ciudad{
+  nombre;
+  aeropuertos;
+  
+}
+
+class Aeropuerto{
+  nombre;
+}
+
+class Vuelo{
+  pasajeros;
+  tripulacion;
+  avion;
+  fechaHoraPartida;
+  aeropuertoSalida;
+  aeropuertoDestino;
+}
+
+class Viaje{
+  vuelos;
+  escalas;
+}
+
+class Escala{
+  aeropuerto;
+  duracionAproxEnMin;
+}
+
+class Pasajero{
+  nombre;
+  apellido;
+}
+
+class Empleado{
+  tipo;
+  nombre;
+  apellido;
+  aerolinea;
+}
+
+class Avion{
+  cantAsientos;
+  descripcion;
+}
+
+class Aerolinea{
+  vuelos;
+}
+
+Ciudad -> Aeropuerto
+Vuelo -> Aeropuerto
+Vuelo -> Pasajero: *
+Vuelo -> Empleado: *
+Vuelo -> Avion
+Aerolinea -> Vuelo: *
+Empleado -> Aerolinea
+Viaje -> Vuelo: *
+Viaje -> Escala: *
+Escala -> Aeropuerto
+@enduml
+
+TAREA -> en base a este diagrama de clases, creemos el proyecto con todas
+las clases base y los atributos.
+No hace falta que codeemos los métodos.
+Lo subimos a un nuevo REPO.
